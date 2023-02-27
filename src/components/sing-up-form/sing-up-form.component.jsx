@@ -27,7 +27,6 @@ const SingInForm = () => {
 
     setFormFields({ ...formFields, [name]: value });
   };
-  console.log(formFields);
 
   const reasetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -59,7 +58,9 @@ const SingInForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName });
+
       reasetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {

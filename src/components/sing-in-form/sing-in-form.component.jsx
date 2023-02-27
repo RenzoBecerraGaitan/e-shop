@@ -11,7 +11,6 @@ import ButtonStyles from "../button/button.component";
 import "./sing-in-form.styles.scss";
 
 import FormInput from "../form-input/form-input.component";
-import { async } from "@firebase/util";
 
 const logGoogleUser = async () => {
   const { user } = await signInWithGooglePopup();
@@ -39,8 +38,7 @@ const SingInForm = () => {
     console.log(formFields);
 
     try {
-      const respose = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(respose);
+      await signInAuthUserWithEmailAndPassword(email, password);
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
