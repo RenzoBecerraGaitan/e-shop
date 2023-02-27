@@ -17,7 +17,7 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
-const SingUpForm = () => {
+const SingInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
 
   const { displayName, email, password, confirmPassword } = formFields;
@@ -120,4 +120,4 @@ const SingUpForm = () => {
   );
 };
 
-export default SingUpForm;
+export default SingInForm;
